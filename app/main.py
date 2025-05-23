@@ -1,7 +1,12 @@
 class Animal:
     alive = []
 
-    def __init__(self, name: str, health: int = 100, hidden: bool = False) -> None:
+    def __init__(
+            self,
+            name: str,
+            health: int = 100,
+            hidden: bool = False
+    ) -> None:
         self.health = health
         self.name = name
         self.hidden = hidden
@@ -9,7 +14,9 @@ class Animal:
 
     def __repr__(self) -> str:
         return (
-            f"{{Name: {self.name}, Health: {self.health}, Hidden: {self.hidden}}}"
+            f"{{Name: {self.name}, "
+            f"Health: {self.health}, "
+            f"Hidden: {self.hidden}}}"
         )
 
     @classmethod
@@ -29,4 +36,3 @@ class Carnivore(Animal):
         if isinstance(herbivore, Herbivore) and herbivore.hidden is False:
             herbivore.health -= 50
             Animal.dead_animal()
-
